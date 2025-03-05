@@ -4,13 +4,13 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-connectDB()
+connectDB();
 
 // Middleware
 app.use(express.json());
-app.use(cors("http://localhost:3000"));
+app.use(cors({ origin: "http://localhost:3000" }));
 
-app.use("/books", require("./Routes/BookRoutes"))
+app.use("/books", require("./Routes/BookRoutes"));
 
 // Start Server
 const PORT = process.env.PORT || 5000;
