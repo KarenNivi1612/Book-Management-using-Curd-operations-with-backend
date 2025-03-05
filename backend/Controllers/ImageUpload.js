@@ -41,7 +41,7 @@ router.post("/", upload.single("Fileupload"), (req, res) => {
 router.use("/files", express.static(dir));
 
 router.get("/view_file", (req, res) => {
-  BookImg.find()
+    ImageUpload.find()
     .then((books) => res.json(books))
     .catch((err) => res.status(400).json({ error: err.message })); 
 });
